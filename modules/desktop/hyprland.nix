@@ -34,7 +34,7 @@
               "$mod, T, exec, kitty"
               "$mod, Space, exec, wofi --show drun"
               "$mod, W, killactive"
-              "$mod, Shift, W, forcekillactive"
+              "$mod, Shift+W, forcekillactive"
 
             ];
             bindm = [
