@@ -1,12 +1,14 @@
 {
-  flake.modules.nixos."hosts/workstation".boot =
+  flake.modules.nixos."hosts/workstation" =
     { pkgs, ... }:
     {
-      loader = {
-        systemd-boot.enable = true;
-        efi.canTouchEfiVariables = true;
+      boot = {
+        loader = {
+          systemd-boot.enable = true;
+          efi.canTouchEfiVariables = true;
+        };
+        kernelPackagess = pkgs.linuxPackages_latest;
+        kernelModules = [ "iwlwifi" ];
       };
-      kernelPackagess = pkgs.linuxPackages_latest;
-      kernelModules = [ "iwlwifi" ];
     };
 }
