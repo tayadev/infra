@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 {
   flake.modules = {
     nixos.taya = {
@@ -17,7 +17,7 @@
 
     homeManager.taya = {
 
-      environment.systemPackages = with pkgs; [
+      environment.systemPackages = with config.nixpkgs; [
         mods
       ];
 
