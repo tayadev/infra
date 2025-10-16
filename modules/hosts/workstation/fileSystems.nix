@@ -1,12 +1,8 @@
 {
   flake.modules.nixos."hosts/workstation" = {
     fileSystems."/" = {
-      device = "/dev/disk/by-uuid/6fb8e36f-069c-43db-a843-1e345b17ec04";
+      device = "/dev/disk/by-uuid/35d8178a-1e3c-4ef8-953f-4f94c1ee0f4f";
       fsType = "ext4";
     };
-
-    swapDevices = [
-      { device = "/dev/disk/by-uuid/f70058b0-0600-4a7c-a226-37bf10eb307d"; }
-    ];
   };
 }
