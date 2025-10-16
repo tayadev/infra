@@ -47,7 +47,7 @@
 
         home = {
           packages = with pkgs; [
-            gnome.gnome-keyring
+            gnome-keyring
           ];
         };
       };
