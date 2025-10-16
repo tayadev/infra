@@ -19,6 +19,7 @@
       programs.mods = {
         enable = true;
         settings = {
+          default-api = "openrouter";
           default-model = "openai/gpt-4o-mini";
           apis = {
             openrouter = {
