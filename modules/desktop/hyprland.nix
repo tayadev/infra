@@ -34,8 +34,12 @@
               "$mod, T, exec, kitty"
               "$mod, Space, exec, wofi --show drun"
               "$mod, W, killactive"
+              "$mod, Shift, W, forcekillactive"
+
+            ];
+            bindm = [
               "$mod, mouse:272, movewindow"
-              "$mod, mouse:273, resizeactive"
+              "$mod, mouse:273, resizewindow"
             ];
             exec-once = [
               "kitty"
