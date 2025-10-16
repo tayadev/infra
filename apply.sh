@@ -41,7 +41,7 @@ fi
 # Stage all changes if nothing is staged
 if git diff --cached --quiet; then
     print_info "Staging all changes..."
-    git add -A
+    git add -A .
     print_success "Changes staged successfully!"
 else
     print_info "Changes already staged."
