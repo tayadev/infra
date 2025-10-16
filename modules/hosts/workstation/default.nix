@@ -19,9 +19,6 @@
       # Users
       root
       taya
-
-      # Host-specific modules
-      ./hyprland.nix
     ]
     # Specific Home-Manager modules
     ++ [
@@ -30,7 +27,7 @@
           base
           desktop
           hyprland
-          "hosts/workstation/hyprland"
+          "hosts/hyprland/workstation"
           taya
           dev
         ];
