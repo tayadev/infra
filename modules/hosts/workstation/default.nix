@@ -27,7 +27,7 @@
           base
           desktop
           hyprland
-          ./hyprland.nix
+          "hosts/workstation/hyprland"
           taya
           dev
         ];
