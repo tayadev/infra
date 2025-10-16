@@ -35,7 +35,7 @@
               "$mod, Space, exec, wofi --show drun"
               "$mod, W, killactive"
               "$mod, mouse:272, movewindow"
-              "$mod, mouse:273, resizewindow"
+              "$mod, mouse:273, resizeactive"
             ];
             exec-once = [
               "kitty"
