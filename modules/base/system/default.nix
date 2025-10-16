@@ -5,10 +5,10 @@
     in
     {
       homeManager.base = {
-        home-manager = {
-          backupFileExtension = ".hm-backup";
-        };
         home = {
+          home-manager = {
+            backupFileExtension = ".hm-backup";
+          };
           inherit stateVersion;
         };
       };
