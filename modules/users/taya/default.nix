@@ -16,7 +16,7 @@
     };
 
     homeManager.taya =
-      { pkgs }:
+      { pkgs, ... }:
       {
 
         environment.systemPackages = with pkgs; [
