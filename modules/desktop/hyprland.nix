@@ -2,42 +2,43 @@
 {
   flake.modules = {
     nixos.hyprland =
-    { pkgs, ... }:
-    {
+      { pkgs, ... }:
+      {
 
-      programs.hyprland.enable = true;
+        programs.hyprland.enable = true;
+        environment.systemPackages = [ pkgs.rofi ];
 
-      services = {
-        displayManager = {
-          ly = {
-            enable = true;
+        services = {
+          displayManager = {
+            ly = {
+              enable = true;
+            };
           };
         };
       };
-    };
 
     homeManager.hyprland =
-    {
-      pkgs,
-      lib,
-      config,
-      ...
-    }:
-    {
-      programs.kitty.enable = true;
-      wayland.windowManager.hyprland = {
-        enable = true;
-        settings = {
+      {
+        pkgs,
+        lib,
+        config,
+        ...
+      }:
+      {
+        programs.kitty.enable = true;
+        wayland.windowManager.hyprland = {
+          enable = true;
+          settings = {
             "$mod" = "SUPER";
-            bind =
-              [
-                "$mod, T, exec, kitty"
-              ];
+            bind = [
+              "$mod, T, exec, kitty"
+              "$mod, Enter, exec, rofi"
+            ];
             exec-once = [
               "kitty"
             ];
+          };
         };
       };
-    };
   };
 }
