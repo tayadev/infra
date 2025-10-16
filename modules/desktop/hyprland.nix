@@ -6,7 +6,7 @@
       {
 
         programs.hyprland.enable = true;
-        environment.systemPackages = [ pkgs.rofi ];
+        environment.systemPackages = [ pkgs.wofi ];
 
         services = {
           displayManager = {
@@ -32,7 +32,10 @@
             "$mod" = "SUPER";
             bind = [
               "$mod, T, exec, kitty"
-              "$mod, Space, exec, rofi -show drun"
+              "$mod, Space, exec, wofi --show drun"
+              "$mod, W, killactive"
+              "$mod, mouse:272, movewindow"
+              "$mod, mouse:273, resizewindow"
             ];
             exec-once = [
               "kitty"
