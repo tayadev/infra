@@ -5,8 +5,8 @@
     in
     {
       homeManager.base = {
+        backupFileExtension = ".hm-backup";
         home = {
-          backupFileExtension = ".hm-backup";
           inherit stateVersion;
         };
       };
