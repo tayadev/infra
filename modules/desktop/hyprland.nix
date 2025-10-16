@@ -32,7 +32,7 @@
             "$mod" = "SUPER";
             bind = [
               "$mod, T, exec, kitty"
-              "$mod, Enter, exec, rofi -show drun"
+              "$mod, Space, exec, rofi -show drun"
             ];
             exec-once = [
               "kitty"
