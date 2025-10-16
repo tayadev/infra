@@ -6,9 +6,6 @@
     {
       homeManager.base = {
         home = {
-          home-manager = {
-            backupFileExtension = ".hm-backup";
-          };
           inherit stateVersion;
         };
       };

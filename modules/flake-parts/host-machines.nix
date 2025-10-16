@@ -28,6 +28,7 @@ in
             inputs.home-manager.nixosModules.home-manager
             {
               home-manager.extraSpecialArgs = specialArgs;
+              home-manager.backupFileExtension = ".hm-backup";
             }
           ];
         };
