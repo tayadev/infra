@@ -13,6 +13,7 @@
       nvidia
       hyprland
       desktop
+      internet
 
       # Users
       root
