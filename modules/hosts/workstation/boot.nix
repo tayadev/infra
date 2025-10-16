@@ -1,6 +1,6 @@
 {
   flake.modules.nixos."hosts/workstation".boot =
-    { pkgs }:
+    { pkgs, ... }:
     {
       loader = {
         systemd-boot.enable = true;
