@@ -5,8 +5,9 @@
     [
       {
         nixpkgs.hostPlatform = "x86_64-linux";
+        networking.hostName = "workstation";
       }
-      
+
       # Modules
       base
       nvidia
