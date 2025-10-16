@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
   flake.modules = {
     nixos.taya = {
@@ -10,12 +10,17 @@
           "networkmanager"
           "wheel"
         ];
-        openssh.authorizedKeys.keys = [];
+        openssh.authorizedKeys.keys = [ ];
         initialPassword = "taya";
       };
     };
 
     homeManager.taya = {
+
+      environment.systemPackages = with pkgs; [
+        mods
+      ];
+
       programs.git = {
         enable = true;
         userName = "Taya Crystals";
