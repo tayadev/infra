@@ -15,19 +15,13 @@
       };
     };
 
-    homeManager.taya =
-      { pkgs, ... }:
-      {
-
-        environment.systemPackages = with pkgs; [
-          mods
-        ];
-
-        programs.git = {
-          enable = true;
-          userName = "Taya Crystals";
-          userEmail = "taya@taya.net";
-        };
+    homeManager.taya = {
+      programs.mods.enable = true;
+      programs.git = {
+        enable = true;
+        userName = "Taya Crystals";
+        userEmail = "taya@taya.net";
       };
+    };
   };
 }
