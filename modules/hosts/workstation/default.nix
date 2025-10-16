@@ -25,6 +25,7 @@
       {
         home-manager.users.taya.imports = with config.flake.modules.homeManager; [
           base
+          desktop
           hyprland
           taya
           dev

@@ -15,6 +15,7 @@
         networking.networkmanager.enable = true;
 
         services = {
+          gnome.gnome-keyring.enable = true;
           xserver = {
             enable = true;
           };
@@ -36,30 +37,17 @@
           ];
         };
 
+        services.gnome-keyring = {
+          enable = true;
+          components = [
+            "secrets"
+            "ssh"
+          ];
+        };
+
         home = {
           packages = with pkgs; [
-            kdePackages.akonadi-search
-            kdePackages.akregator
-            kdePackages.ark
-            kdePackages.filelight
-            kdePackages.kate
-            kdePackages.kcalc
-            kdePackages.kdialog
-            kdePackages.kgpg
-            kdePackages.kpipewire
-            kdePackages.krdc
-            kdePackages.krfb
-            kdePackages.ksystemlog
-            kdePackages.kweather
-            kdePackages.okular
-            kdePackages.plasma-browser-integration
-            kdePackages.sddm-kcm
-            kdePackages.spectacle
-            kdePackages.xdg-desktop-portal-kde
-            kdePackages.yakuake
-            krita
-            vlc
-            zotero
+            gnome.gnome-keyring
           ];
         };
       };
