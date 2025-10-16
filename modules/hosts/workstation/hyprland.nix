@@ -1,6 +1,6 @@
 {
   flake.modules = {
-    homeManager."hosts/workstation/hyprland" = {
+    homeManager.hyprland-workstation = {
       wayland.windowManager.hyprland = {
         settings = {
           monitor = [
