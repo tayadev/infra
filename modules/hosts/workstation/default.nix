@@ -12,6 +12,7 @@
       base
       nvidia
       hyprland
+      desktop
 
       # Users
       root
