@@ -27,7 +27,7 @@
           base
           desktop
           hyprland
-          "hosts/hyprland/workstation"
+          "hosts/workstation/hyprland"
           taya
           dev
         ];
