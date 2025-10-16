@@ -5,7 +5,10 @@
       fsType = "ext4";
     };
 
-fileSystems."/boot" =
-{device = "/dev/disk/by-uuid/BD9C-34BC"; fsType = "vfat"; options = [ "fmask=0022" "dmask=0022" ]; };
+    fileSystems."/boot" = {
+      device = "/dev/disk/by-uuid/BD9C-34BC";
+      fsType = "vfat";
+      options = [ "fmask=0022" "dmask=0022" ];
+    };
   };
 }

@@ -9,6 +9,7 @@
       
       # Modules
       base
+      nvidia
       hyprland
 
       # Users
