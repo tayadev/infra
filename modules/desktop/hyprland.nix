@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ ... }:
 {
   flake.modules = {
     nixos.hyprland =
@@ -19,9 +19,6 @@
 
     homeManager.hyprland =
       {
-        pkgs,
-        lib,
-        config,
         ...
       }:
       {

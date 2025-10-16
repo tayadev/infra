@@ -32,15 +32,9 @@ if ! git rev-parse --git-dir > /dev/null 2>&1; then
     exit 1
 fi
 
-# Check if mods is available
-if ! command -v mods &> /dev/null; then
-    print_error "mods CLI tool is not installed or not in PATH"
-    exit 1
-fi
-
-# Check if there are any changes to commit
+# Check if there are any changes to stage
 if git diff --cached --quiet && git diff --quiet; then
-    print_warning "No changes detected. Nothing to commit."
+    print_warning "No changes detected. Nothing to stage."
     exit 0
 fi
 
@@ -48,41 +42,10 @@ fi
 if git diff --cached --quiet; then
     print_info "Staging all changes..."
     git add -A
+    print_success "Changes staged successfully!"
+else
+    print_info "Changes already staged."
 fi
-
-# Get the git diff
-print_info "Getting git diff..."
-DIFF=$(git diff --cached)
-
-if [ -z "$DIFF" ]; then
-    print_error "No staged changes found!"
-    exit 1
-fi
-
-# Generate commit message using mods
-print_info "Generating commit message using mods..."
-COMMIT_MSG=$(echo "$DIFF" | mods "Generate a concise, conventional commit message for these changes. Use conventional commit format (type(scope): description). Be specific about what changed. Return only the commit message, no extra text or formatting.")
-
-if [ -z "$COMMIT_MSG" ]; then
-    print_error "Failed to generate commit message!"
-    exit 1
-fi
-
-print_info "Generated commit message:"
-echo -e "${GREEN}$COMMIT_MSG${NC}"
-
-# Ask for confirmation
-read -p "Do you want to commit with this message? (y/N): " -n 1 -r
-echo
-if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-    print_warning "Commit cancelled by user."
-    exit 0
-fi
-
-# Commit the changes
-print_info "Committing changes..."
-git commit -m "$COMMIT_MSG"
-print_success "Changes committed successfully!"
 
 # Run NixOS switch
 print_info "Running 'nh os switch .'..."

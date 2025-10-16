@@ -25,8 +25,6 @@
     homeManager.desktop =
       {
         pkgs,
-        lib,
-        config,
         ...
       }:
       {
