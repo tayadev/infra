@@ -15,17 +15,19 @@
       };
     };
 
-    homeManager.taya = {
+    homeManager.taya =
+      { pkgs }:
+      {
 
-      environment.systemPackages = with config.nixpkgs; [
-        mods
-      ];
+        environment.systemPackages = with pkgs; [
+          mods
+        ];
 
-      programs.git = {
-        enable = true;
-        userName = "Taya Crystals";
-        userEmail = "taya@taya.net";
+        programs.git = {
+          enable = true;
+          userName = "Taya Crystals";
+          userEmail = "taya@taya.net";
+        };
       };
-    };
   };
 }
