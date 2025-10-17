@@ -32,7 +32,6 @@
             "$mod" = "SUPER";
             bind = [
               "$mod, T, exec, kitty"
-              "$mod, Space, exec, wofi --show drun"
               "$mod, W, killactive"
               "$mod, Shift+W, forcekillactive"
 
@@ -40,6 +39,9 @@
             bindm = [
               "$mod, mouse:272, movewindow"
               "$mod, mouse:273, resizewindow"
+            ];
+            bindr = [
+              "SUPER, SUPER_L, exec, wofi --show drun"
             ];
             exec-once = [
               "kitty"
