@@ -6,7 +6,10 @@
       {
 
         programs.hyprland.enable = true;
-        environment.systemPackages = [ pkgs.wofi ];
+        environment.systemPackages = with pkgs; [
+          wofi
+          bibata-cursors
+        ];
 
         services = {
           displayManager = {
@@ -40,6 +43,7 @@
             ];
             exec-once = [
               "kitty"
+              "hyprctl setcursor Bibata-Modern-Amber 24"
             ];
           };
         };
