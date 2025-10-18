@@ -14,6 +14,7 @@
         system = {
           inherit stateVersion;
         };
+        services.timesyncd.enable = true;
       };
     };
 }

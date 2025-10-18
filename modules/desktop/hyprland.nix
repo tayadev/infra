@@ -9,6 +9,7 @@
         environment.systemPackages = with pkgs; [
           wofi
           bibata-cursors
+          hyprpaper
         ];
 
         services = {
@@ -22,6 +23,22 @@
 
     homeManager.hyprland = {
       programs.kitty.enable = true;
+      services.hyprpaper = {
+        enable = true;
+        settings = {
+          ipc = "on";
+          splash = false;
+          splash_offset = 2.0;
+
+          preload = [
+            "~/wallpaper.jpg"
+          ];
+
+          wallpaper = [
+            ",~/wallpaper.jpg"
+          ];
+        };
+      };
       wayland.windowManager.hyprland = {
         enable = true;
         settings = {
@@ -40,6 +57,7 @@
           ];
           exec-once = [
             "hyprctl setcursor Bibata-Modern-Amber 24"
+            "hyprpaper"
           ];
         };
       };
