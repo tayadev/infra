@@ -43,6 +43,9 @@
         enable = true;
         settings = {
           "$mod" = "SUPER";
+          general = {
+            border_size = 0;
+          };
           bind = [
             "$mod, T, exec, kitty"
             "$mod, W, killactive"
